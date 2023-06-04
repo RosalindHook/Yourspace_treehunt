@@ -7,11 +7,11 @@
 <style>
 
 #tree_map {
-    height: 80%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     left: 0;
     position: absolute;
-    top: 0;
+    top: 100px;
     background-color: palegreen;
 }
 
@@ -50,16 +50,17 @@
 
     function place_marker(location) {
 
+    var emoji = document.getElementById('icon_to_use').value;
         var marker = new google.maps.Marker({
             position: location,
-            map: tree_map
+            map: tree_map,
             icon: emoji
             });
         console.log(location.lat() + " " + location.lng() + " " + emoji);
     }
 
 place_marker();
-    
+
 </script>
 
 </body>
