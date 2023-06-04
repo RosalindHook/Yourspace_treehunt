@@ -29,6 +29,8 @@
   <select id="icon_to_use">
       <option value="tree.png">Deciduous tree</option>
       <option value="tree2.png">Evergreen tree</option>
+      <option value="leaf.png">Leaf</option>
+      <option value="flower.png">Flower</option>
   </select>
 </form>
 
@@ -51,12 +53,13 @@
         var marker = new google.maps.Marker({
             position: location,
             map: tree_map
+            icon: emoji
             });
-
+        console.log(location.lat() + " " + location.lng() + " " + emoji);
     }
 
 place_marker();
-
+    
 </script>
 
 </body>
