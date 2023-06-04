@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seears Park Tree Hunt</title>
+</head>
+<style>
+
+#tree_map {
+    height: 80%;
+    width: 80%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    background-color: palegreen;
+}
+
+</style>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcPEL3GsHaFKvBHv1gX2ergBKIA1HIq3o&callback=initMap">
+</script>
+
+<body>
+<p>My tree map</p>
+<div id="tree_map"></div>
+
+<form>
+  <select id="icon_to_use">
+      <option value="tree.png">Deciduous tree</option>
+      <option value="tree2.png">Evergreen tree</option>
+  </select>
+</form>
+
+<script>
+    var tree_map;
+    function initMap() {
+
+            tree_map = new google.maps.Map(document.getElementById('tree_map'),
+            {zoom: 18, center: {lat: 51.361376, lng: -0.212899}
+            });
+
+        tree_map.addListener('click', function(e) {
+        var location = e.latLng;
+        place_marker(location);
+            });
+        }
+
+    function place_marker(location) {
+
+        var marker = new google.maps.Marker({
+            position: location,
+            map: tree_map
+            });
+
+    }
+
+place_marker();
+
+</script>
+
+</body>
+</html>
