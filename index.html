@@ -7,11 +7,11 @@
 <style>
 
 #tree_map {
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 80%;
     left: 0;
     position: absolute;
-    top: 100px;
+    top: 0;
     background-color: palegreen;
 }
 
@@ -29,8 +29,6 @@
   <select id="icon_to_use">
       <option value="tree.png">Deciduous tree</option>
       <option value="tree2.png">Evergreen tree</option>
-      <option value="leaf.png">Leaf</option>
-      <option value="flower.png">Flower</option>
   </select>
 </form>
 
@@ -50,13 +48,11 @@
 
     function place_marker(location) {
 
-    var emoji = document.getElementById('icon_to_use').value;
         var marker = new google.maps.Marker({
             position: location,
-            map: tree_map,
-            icon: emoji
+            map: tree_map
             });
-        console.log(location.lat() + " " + location.lng() + " " + emoji);
+
     }
 
 place_marker();
